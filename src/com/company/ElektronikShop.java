@@ -85,15 +85,18 @@ public class ElektronikShop {
             if(it1 instanceof Tastatur)
                 for(Item it2:this.items)
                     if(it2 instanceof USB){
-                        if(it1.getPrice()+it2.getPrice()<=budget || x==null && it1.getPrice()+it2.getPrice()>=price ){
-                            x=it1;
-                            y=it2;
-                            price=it1.getPrice()+it2.getPrice();
+                        if(it1.getPrice()+it2.getPrice()<=budget)
+                            if (x==null  || it1.getPrice()+it2.getPrice()>=price ){
+                                x=it1;
+                                y=it2;
+                                price=it1.getPrice()+it2.getPrice();
                         }
                     }
         if(x!=null){
             x.print_item(); y.print_item();
         }
+        else
+            System.out.println("Budget too low");
 
     }
 }

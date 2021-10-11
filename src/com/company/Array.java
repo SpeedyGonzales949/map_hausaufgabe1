@@ -10,6 +10,8 @@ pre:int
 desc: bastelt den Array mit random naturliche Zahlen
  */
     public void generate(int n){
+        if(n<1)
+            return;
         array=new int[n];
         Random r=new Random();
 

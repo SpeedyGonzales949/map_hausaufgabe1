@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Big_Num {
     private int[] nr1,nr2;
 
@@ -39,6 +41,15 @@ public class Big_Num {
     desc:berechnet die Differenz zweier sehr grossen Zahlen
      */
     public int[] dif(){
+        for(int i=0;i<nr1.length;i++)
+            if(this.nr1[i]>this.nr2[i]){
+                int [] temp;
+                temp=nr1;
+                nr1=nr2;
+                nr2=temp;
+                break;
+            }
+
         int carry=0;
         int[] nr3=new int[this.nr1.length];
         for(int i=this.nr1.length-1;i>=0;i--){
@@ -59,6 +70,8 @@ public class Big_Num {
     desc:berechnet die Multiplikation einer grossen Zahl mit einem Ziffer
      */
     public int[] mul(int x){
+        if(x<1)
+            return null;
         int carry =0;
         int[] nr=new int[this.nr1.length+1];
 
@@ -74,6 +87,8 @@ public class Big_Num {
     desc:berechnet die Division einer grossen Zahl mit einem Ziffer
      */
     public int[] div(int x){
+        if(x<1)
+            return null;
         int[] nr=new int[this.nr1.length];
         int carry=0;
         for(int i=0;i<this.nr1.length;i++){
@@ -84,6 +99,11 @@ public class Big_Num {
         return nr;
     }
     public void print_num(int[] nr){
+        if(nr==null){
+            System.out.println(Arrays.toString(nr));
+            return;
+        }
+
         for (int x:nr
         ) {
             System.out.print(x);
