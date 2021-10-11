@@ -36,13 +36,12 @@ public class Main {
 
 		System.out.println("---ex3---");
 		Big_Num b=new Big_Num();
-		b.setNr1(new int[]{1, 3, 8, 0, 0});
+		b.setNr1(new int[]{1, 3, 8, 0,0});
 		b.setNr2(new int []{1, 6, 9, 0, 0});
-		System.out.println("Sum");
-		b.sum();
-		b.dif();
-		b.mul(4);
-		b.div(2);
+		b.print_num(b.sum());
+		b.print_num(b.dif());
+		b.print_num(b.mul(4));
+		b.print_num(b.div(2));
 
 
 		System.out.println("---ex4---");
