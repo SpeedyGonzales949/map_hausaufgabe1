@@ -9,7 +9,7 @@ desc:zeigt alle Noten die die Prufung nicht gestanden haben
     public int[] exam(int[] noten){
         System.out.print("Exam is on... ");
         for (int i=0;i<noten.length;i++)
-            if(noten[i]>=40){
+            if(noten[i]>=40){//alle Noten uber 40 sind geloscht
                 noten=removenote(noten,i);
                 i--;
             }
@@ -27,11 +27,11 @@ desc:berechnet die Durchschnittsnote
             return 0;
         for (int note:noten
         ) {
-            s=s+note;
+            s=s+note;//summe aller Noten
 
 
         }
-        return s*1.0/noten.length;
+        return s*1.0/noten.length;//arithmetische Mittel
     }
 
     /*
@@ -64,7 +64,11 @@ desc:berechnet die Durchschnittsnote
         return max;
 
     }
-
+/*
+pre:int[]
+post:int[]
+desc:removes an element from an array
+ */
     public  int[] removenote(int[] arr,
                              int index)
     {
@@ -72,20 +76,21 @@ desc:berechnet die Durchschnittsnote
                 || index < 0
                 || index >= arr.length) {
 
-            return arr;
+            return arr;//falls array leer ist oder die Position nicht richtig ist, den Array wird zuruckgeliefert
         }
         int[] anotherArray = new int[arr.length - 1];
-        System.arraycopy(arr, 0, anotherArray, 0, index);
-        System.arraycopy(arr, index + 1,
-                anotherArray, index,
-                arr.length - index - 1);
+        System.arraycopy(arr, 0, anotherArray, 0, index);//loschen des Elementes
+        System.arraycopy(arr, index + 1,anotherArray, index, arr.length - index - 1);
 
         return anotherArray;
     }
 
+    /*
+    pre:int[]
+    desc: zeigt auf dem Bildshirm alle Elemente des Arrays
+     */
     public void print_noten(int[] noten){
         for (int j : noten) System.out.print(j + " ");
         System.out.println();
-
     }
 }

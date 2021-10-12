@@ -11,8 +11,6 @@ public class Main {
 		n.print_noten(noten);
 
 		//a
-
-		System.out.println("Failed Marks:");
 		n.print_noten(n.exam(noten));
 
 		//b
@@ -35,12 +33,14 @@ public class Main {
 
 		System.out.println("---ex3---");
 		Big_Num b=new Big_Num();
-		b.setNr1(new int[]{2, 0, 0, 0,0});
+		b.setNr1(new int[]{9, 0, 0, 0,0});
 		b.setNr2(new int []{1, 1, 1, 1, 1});
 		b.print_num(b.sum());
 		b.print_num(b.dif());
-		b.print_num(b.mul(4));
-		b.print_num(b.div(3));
+		b.setNr2(new int[]{2});
+		b.print_num(b.mul());
+		b.setNr2(new int[]{5});
+		b.print_num(b.div());
 
 
 		System.out.println("---ex4---");
@@ -48,7 +48,7 @@ public class Main {
 		System.out.println(shop.cheap_keyboard());
 		shop.expansive_item();
 		shop.expansive_usb(10);
-		shop.max_items(20);
+		shop.max_items(100);
     }
 
 
